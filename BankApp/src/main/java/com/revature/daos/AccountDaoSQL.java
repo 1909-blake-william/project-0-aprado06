@@ -179,7 +179,7 @@ public class AccountDaoSQL implements AccountDao {
 		try (Connection c = ConnectionUtil.getConnection()) {
 
 			String query = "INSERT INTO transactions (transaction_id, account_id, transaction_done, transaction_date)"
-					+ " VALUES (transaction_id_seq.nextval , ?, ?, DATE '2019-10-31')";
+					+ " VALUES (transaction_id_seq.nextval , ?, ?, SYSDATE)";
 
 			PreparedStatement ps = c.prepareStatement(query);
 			ps.setInt(1, id);
